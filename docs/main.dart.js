@@ -43711,7 +43711,7 @@ while(true)switch(t){case 0:q=J
 p=u.l
 o=C.bh
 t=4
-return P.aI(W.a30("assets/samples.json"),$async$kG)
+return P.aI(W.a30("https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/samples.json"),$async$kG)
 case 4:t=3
 return P.aI(o.AL(0,b,null),$async$kG)
 case 3:r=q.ni(p.a(b),new Y.Sk(),u.px).en(0)

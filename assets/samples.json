@@ -4,7 +4,7 @@
     "description": "",
     "clone": "Spotify",
     "isPWA": true,
-    "image": "assets/images/spotify.png",
+    "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/spotify.png",
     "url": "",
     "demo": "",
     "screenshots": [
@@ -18,7 +18,7 @@
     "description": "",
     "clone": "Twitter",
     "isPWA": true,
-    "image": "assets/images/twitter.jpg",
+    "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter.jpg",
     "url": "",
     "demo": "",
     "screenshots": [
@@ -32,7 +32,7 @@
     "description": "",
     "clone": "Slack",
     "isPWA": true,
-    "image": "assets/images/slack.jpg",
+    "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack.jpg",
     "url": "",
     "demo": "",
     "screenshots": [
@@ -46,7 +46,7 @@
     "description": "",
     "clone": "WhatsApp",
     "isPWA": true,
-    "image": "assets/images/whatsapp.jpg",
+    "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp.jpg",
     "url": "",
     "demo": "",
     "screenshots": [
@@ -60,7 +60,7 @@
     "description": "",
     "clone": "Uber",
     "isPWA": true,
-    "image": "assets/images/uber.jpg",
+    "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/uber.jpg",
     "url": "",
     "demo": "",
     "screenshots": [
@@ -74,7 +74,7 @@
     "description": "",
     "clone": "Netflix",
     "isPWA": true,
-    "image": "assets/images/netflix.jpg",
+    "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix.jpg",
     "url": "",
     "demo": "",
     "screenshots": [

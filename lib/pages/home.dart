@@ -90,7 +90,7 @@ class _SearchGalleryState extends State<SearchGallery> {
   }
 
   Future<List<Sample>> fetchData() async {
-    final json = await HttpRequest.getString('assets/samples.json');
+    final json = await HttpRequest.getString('${Utils.rootUrl}assets/samples.json');
     final decode = await jsonDecode(json) as List;
     return decode.map((item) => Sample.toObject(item)).toList();
   }

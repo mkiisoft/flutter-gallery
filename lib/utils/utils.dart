@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Utils {
+  static final String rootUrl = 'https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/';
+
   static final String appName = 'Flutter Gallery';
   static final String appPath = '/gallery';
 
