@@ -145,7 +145,7 @@ class _SearchGalleryState extends State<SearchGallery> {
             child: GridView.builder(
               padding: const EdgeInsets.symmetric(vertical: 40),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  childAspectRatio: 1.4, crossAxisCount: isTablet ? 2 : isMobile ? 1 : 3),
+                  childAspectRatio: 1.2, crossAxisCount: isTablet ? 2 : isMobile ? 1 : 3),
               itemBuilder: (context, index) {
                 return SampleItem(sample: _filteredList[index]);
               },

@@ -1,18 +1,17 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:fluttergallery/pages/details.dart';
 import 'package:fluttergallery/pages/home.dart';
 import 'package:fluttergallery/utils/simple_route.dart';
 import 'package:fluttergallery/utils/utils.dart';
+import 'package:universal_html/html.dart';
 
 class NavigatorRoute extends StatefulWidget {
   final String path;
 
   static Route<dynamic> route(String path) {
-    return SimpleRoute(
-        name: Utils.appPath,
-        title: Utils.appName,
-        builder: (_) => NavigatorRoute(path: path),
-        animated: false
-    );
+    return SimpleRoute(name: '', title: Utils.appName, builder: (_) => NavigatorRoute(path: path), animated: false);
   }
 
   const NavigatorRoute({Key key, this.path}) : super(key: key);
@@ -22,7 +21,6 @@ class NavigatorRoute extends StatefulWidget {
 }
 
 class _NavigatorRouteState extends State<NavigatorRoute> {
-
   @override
   void initState() {
     super.initState();
@@ -30,15 +28,10 @@ class _NavigatorRouteState extends State<NavigatorRoute> {
       if (widget.path == '/gallery') {
         Navigator.of(context).pushAndRemoveUntil(HomeScreen.route(false), (_) => false);
         return;
-      } else if (widget.path == '/join') {
-//        Navigator.of(context).pushAndRemoveUntil(JoinScreen.route(), (_) => false);
-        return;
-      } else if (widget.path == '/bae') {
-//        Navigator.of(context).pushAndRemoveUntil(BaeScreen.route(), (_) => false);
-      } else if (widget.path == '/about') {
-
+      } else if (widget.path.contains('/app/')) {
+        Navigator.of(context).pushAndRemoveUntil(SampleDetails.route(false, widget.path.split('/')[3]), (_) => false);
       } else {
-//        Navigator.of(context).pushAndRemoveUntil(HomeScreen.route(false), (_) => false);
+        Navigator.of(context).pushAndRemoveUntil(HomeScreen.route(false), (_) => false);
         return;
       }
     });
@@ -46,6 +39,8 @@ class _NavigatorRouteState extends State<NavigatorRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox();
+    return Material(
+      child: Center(child: CircularProgressIndicator()),
+    );
   }
 }

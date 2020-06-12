@@ -2,6 +2,7 @@
   {
     "title": "Music Player",
     "description": "",
+    "path": "spotify",
     "clone": "Spotify",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/spotify.png",
@@ -16,6 +17,7 @@
   {
     "title": "Social Media App",
     "description": "",
+    "path": "twitter",
     "clone": "Twitter",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter.jpg",
@@ -30,6 +32,7 @@
   {
     "title": "Work Chat",
     "description": "",
+    "path": "slack",
     "clone": "Slack",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack.jpg",
@@ -44,6 +47,7 @@
   {
     "title": "Contacts Chat",
     "description": "",
+    "path": "whatsapp",
     "clone": "WhatsApp",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp.jpg",
@@ -58,6 +62,7 @@
   {
     "title": "Ride Sharing",
     "description": "",
+    "path": "uber",
     "clone": "Uber",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/uber.jpg",
@@ -72,6 +77,7 @@
   {
     "title": "Movies App",
     "description": "",
+    "path": "netflix",
     "clone": "Netflix",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix.jpg",
