@@ -1,114 +1,86 @@
 [
   {
-    "title": "Music App",
+    "title": "Music Player",
     "description": "",
     "clone": "Spotify",
     "isPWA": true,
-    "image": "",
+    "image": "assets/images/spotify.png",
     "url": "",
     "demo": "",
     "screenshots": [
-      "",
-      "",
-      ""
+      "hola",
+      "como",
+      "va"
     ]
   },
   {
-    "title": "Music App",
+    "title": "Social Media App",
     "description": "",
-    "clone": "Spotify",
+    "clone": "Twitter",
     "isPWA": true,
-    "image": "",
+    "image": "assets/images/twitter.jpg",
     "url": "",
     "demo": "",
     "screenshots": [
-      "",
-      "",
-      ""
+      "hola",
+      "como",
+      "va"
     ]
   },
   {
-    "title": "Music App",
+    "title": "Work Chat",
     "description": "",
-    "clone": "Spotify",
+    "clone": "Slack",
     "isPWA": true,
-    "image": "",
+    "image": "assets/images/slack.jpg",
     "url": "",
     "demo": "",
     "screenshots": [
-      "",
-      "",
-      ""
+      "hola",
+      "como",
+      "va"
     ]
   },
   {
-    "title": "Music App",
+    "title": "Contacts Chat",
     "description": "",
-    "clone": "Spotify",
+    "clone": "WhatsApp",
     "isPWA": true,
-    "image": "",
+    "image": "assets/images/whatsapp.jpg",
     "url": "",
     "demo": "",
     "screenshots": [
-      "",
-      "",
-      ""
+      "hola",
+      "como",
+      "va"
     ]
   },
   {
-    "title": "Music App",
+    "title": "Ride Sharing",
     "description": "",
-    "clone": "Spotify",
+    "clone": "Uber",
     "isPWA": true,
-    "image": "",
+    "image": "assets/images/uber.jpg",
     "url": "",
     "demo": "",
     "screenshots": [
-      "",
-      "",
-      ""
+      "hola",
+      "como",
+      "va"
     ]
   },
   {
-    "title": "Music App",
+    "title": "Movies App",
     "description": "",
-    "clone": "Spotify",
+    "clone": "Netflix",
     "isPWA": true,
-    "image": "",
+    "image": "assets/images/netflix.jpg",
     "url": "",
     "demo": "",
     "screenshots": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "title": "Music App",
-    "description": "",
-    "clone": "Spotify",
-    "isPWA": true,
-    "image": "",
-    "url": "",
-    "demo": "",
-    "screenshots": [
-      "",
-      "",
-      ""
-    ]
-  },
-  {
-    "title": "Music App",
-    "description": "",
-    "clone": "Spotify",
-    "isPWA": true,
-    "image": "",
-    "url": "",
-    "demo": "",
-    "screenshots": [
-      "",
-      "",
-      ""
+      "hola",
+      "como",
+      "va"
     ]
   }
 ]

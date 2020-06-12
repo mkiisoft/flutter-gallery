@@ -12,4 +12,5 @@ class Utils {
   static final TextStyle h3 = TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.w500);
   static final TextStyle h4 = TextStyle(fontSize: 16, color: Colors.white);
   static final TextStyle h5 = TextStyle(fontSize: 14, color: Colors.white);
+  static final TextStyle h6 = TextStyle(fontSize: 12, color: Colors.white);
 }

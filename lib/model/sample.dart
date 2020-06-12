@@ -8,7 +8,6 @@ class Sample {
   String demo;
   List<String> screenshots;
 
-
   Sample({this.title, this.description, this.clone, this.isPWA, this.image, this.url, this.demo, this.screenshots});
 
   factory Sample.toObject(Map<String, dynamic> json) => Sample(
@@ -19,7 +18,7 @@ class Sample {
       image: json['image'],
       url: json['url'],
       demo: json['demo'],
-      screenshots: json['screenshots']
+      screenshots: (json['screenshots'] as List).cast<String>()
   );
 
   Map<String, dynamic> toMap() => {

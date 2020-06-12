@@ -1,4 +1,7 @@
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
+import 'package:fluttergallery/items/sample_item.dart';
+import 'package:universal_html/html.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttergallery/model/sample.dart';
 import 'package:fluttergallery/utils/simple_route.dart';
@@ -68,14 +71,16 @@ class SearchGallery extends StatefulWidget {
 
 class _SearchGalleryState extends State<SearchGallery> {
   final _controller = TextEditingController();
-  final _list = [];
+  final List<Sample> _list = [];
+  final List<Sample> _filteredList = [];
 
   @override
   void initState() {
     super.initState();
-    fetchData().then((value) {
-      print(value.length);
-    });
+    fetchData().then((list) => setState(() {
+          _list.addAll(list);
+          _filteredList.addAll(_list);
+        }));
   }
 
   @override
@@ -85,14 +90,15 @@ class _SearchGalleryState extends State<SearchGallery> {
   }
 
   Future<List<Sample>> fetchData() async {
-    final json = await jsonDecode('assets/samples.json') as List;
-    return json.map((item) => Sample.toObject(item)).toList();
+    final json = await HttpRequest.getString('assets/samples.json');
+    final decode = await jsonDecode(json) as List;
+    return decode.map((item) => Sample.toObject(item)).toList();
   }
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = MediaQuery.of(context).size.width < 700;
-    final isTablet = MediaQuery.of(context).size.width < 1000;
+    final isMobile = MediaQuery.of(context).size.width <= 700;
+    final isTablet = MediaQuery.of(context).size.width > 700 && MediaQuery.of(context).size.width < 1000;
     return Padding(
       padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 40),
       child: Column(
@@ -115,31 +121,32 @@ class _SearchGalleryState extends State<SearchGallery> {
                     ? InkResponse(
                         onTap: () {
                           _controller.clear();
-                          setState(() {});
+                          setState(() => _filteredList.addAll(_list));
                         },
                         child: Icon(Icons.close, color: Theme.of(context).primaryColor),
                       )
                     : null,
               ),
               onChanged: (text) {
-                setState(() {});
+                setState(() {
+                  _filteredList.clear();
+                  _filteredList.addAll(_list.where((item) =>
+                      item.title.toLowerCase().contains(_controller.text.toLowerCase()) ||
+                      item.clone.toLowerCase().contains(_controller.text.toLowerCase()) ||
+                      item.description.toLowerCase().contains(_controller.text.toLowerCase())));
+                });
               },
             ),
           ),
           Expanded(
             child: GridView.builder(
               padding: const EdgeInsets.symmetric(vertical: 40),
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(childAspectRatio: 1.4, crossAxisCount: isTablet ? 2 : 3),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  childAspectRatio: 1.4, crossAxisCount: isTablet ? 2 : isMobile ? 1 : 3),
               itemBuilder: (context, index) {
-                return Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  child: Card(
-                    elevation: 5,
-                  ),
-                );
+                return SampleItem(sample: _filteredList[index]);
               },
-              itemCount: _list.length,
+              itemCount: _filteredList.length,
             ),
           )
         ],
