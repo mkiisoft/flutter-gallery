@@ -121,7 +121,10 @@ class _SearchGalleryState extends State<SearchGallery> {
                     ? InkResponse(
                         onTap: () {
                           _controller.clear();
-                          setState(() => _filteredList.addAll(_list));
+                          setState(() {
+                            _filteredList.clear();
+                            _filteredList.addAll(_list);
+                          });
                         },
                         child: Icon(Icons.close, color: Theme.of(context).primaryColor),
                       )
