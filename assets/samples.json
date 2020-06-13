@@ -61,7 +61,7 @@
   },
   {
     "title": "Ride Sharing",
-    "description": "Search Results\nFeatured snippet from the web\nUber is a platform where those who drive and deliver can connect with riders, eaters, and restaurants. In cities where Uber is available, you can use the Uber app to request a ride. When a nearby driver accepts your request, the app displays an estimated time of arrival for the driver heading to your pickup location.",
+    "description": "Uber is a platform where those who drive and deliver can connect with riders, eaters, and restaurants. In cities where Uber is available, you can use the Uber app to request a ride. When a nearby driver accepts your request, the app displays an estimated time of arrival for the driver heading to your pickup location.",
     "path": "uber",
     "clone": "Uber",
     "isPWA": true,
