@@ -76,17 +76,17 @@
   },
   {
     "title": "Movies App",
-    "description": "",
+    "description": "Netflix is the world's leading streaming entertainment service with 183 million paid memberships in over 190 countries enjoying TV series, documentaries and movies.",
     "path": "netflix",
     "clone": "Netflix",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix.jpg",
-    "url": "",
-    "demo": "",
+    "url": "https://codepen.io/mkiisoft/pen/ZEboVgJ",
+    "demo": "https://movie-app-flutter.surge.sh",
     "screenshots": [
-      "hola",
-      "como",
-      "va"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix_1.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix_2.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix_3.png"
     ]
   }
 ]
