@@ -144,6 +144,7 @@ class _DetailScreenState extends State<DetailScreen> {
             SizedBox(
               height: 450,
               child: ListView.builder(
+                physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 150),
                 itemBuilder: (context, index) {
@@ -207,7 +208,7 @@ class FullScreenshot extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: Container(
-        color: Colors.black.withAlpha(0xDD),
+        color: Colors.black.withAlpha(0xEE),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -224,9 +225,12 @@ class FullScreenshot extends StatelessWidget {
               child: PageView.builder(
                 controller: PageController(initialPage: index),
                 itemBuilder: (context, index) {
-                  return PhotoView(
-                    backgroundDecoration: BoxDecoration(color: Colors.transparent),
-                    imageProvider: NetworkImage(screenshots[index]),
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: PhotoView(
+                      backgroundDecoration: BoxDecoration(color: Colors.transparent),
+                      imageProvider: NetworkImage(screenshots[index]),
+                    ),
                   );
                 },
                 itemCount: screenshots.length,

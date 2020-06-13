@@ -113,6 +113,7 @@ class _SearchGalleryState extends State<SearchGallery> {
           ),
           Expanded(
             child: GridView.builder(
+              physics: BouncingScrollPhysics(),
               padding: const EdgeInsets.symmetric(vertical: 40),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   childAspectRatio: 1.2, crossAxisCount: isTablet ? 2 : isMobile ? 1 : 3),
