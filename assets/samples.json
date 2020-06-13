@@ -93,7 +93,7 @@
     "title": "Retro Boy",
     "description": "The Game Boy Color (commonly abbreviated as GBC) is a handheld game console, manufactured by Nintendo, which was released in Japan on October 21, 1998 and to international markets that November. It is the successor to the original Game Boy and is part of the Game Boy family.",
     "path": "retroboy",
-    "clone": "Retro Boy",
+    "clone": "Gameboy Color",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/gbc.png",
     "url": "https://codepen.io/mkiisoft/pen/bGVxrWK",
@@ -117,6 +117,21 @@
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti_1.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti_2.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti_3.png"
+    ]
+  },
+  {
+    "title": "Tap Hero Game",
+    "description": "Tap Hero is a 100% Flutter game using sprites, audio, animations and showing the true powers of Flutter Web with Canvas Kit",
+    "path": "taphero",
+    "clone": "Tap Hero Game",
+    "isPWA": true,
+    "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero.png",
+    "url": "https://github.com/mkiisoft/taphero_web",
+    "demo": "https://gametaphero.web.app",
+    "screenshots": [
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_1.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_2.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_3.png"
     ]
   }
 ]
