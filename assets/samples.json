@@ -103,5 +103,20 @@
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/gbc_2.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/gbc_3.png"
     ]
+  },
+  {
+    "title": "Yeti",
+    "description": "Yeti is a small demonstration of how versatile and powerful Flutter can be moving sprints and rendering everything in canvas to any device.",
+    "path": "yeti",
+    "clone": "Yeti",
+    "isPWA": true,
+    "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti.png",
+    "url": "https://codepen.io/mkiisoft/pen/wvKGVQy",
+    "demo": "https://flutter-yeti.web.app",
+    "screenshots": [
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti_1.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti_2.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti_3.png"
+    ]
   }
 ]
