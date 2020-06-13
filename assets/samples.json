@@ -61,17 +61,17 @@
   },
   {
     "title": "Ride Sharing",
-    "description": "",
+    "description": "Search Results\nFeatured snippet from the web\nUber is a platform where those who drive and deliver can connect with riders, eaters, and restaurants. In cities where Uber is available, you can use the Uber app to request a ride. When a nearby driver accepts your request, the app displays an estimated time of arrival for the driver heading to your pickup location.",
     "path": "uber",
     "clone": "Uber",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/uber.jpg",
-    "url": "",
-    "demo": "",
+    "url": "https://codepen.io/mkiisoft/pen/wvKyydP",
+    "demo": "https://ride-sharing-flutter.surge.sh",
     "screenshots": [
-      "hola",
-      "como",
-      "va"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/uber_1.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/uber_2.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/uber_3.png"
     ]
   },
   {
