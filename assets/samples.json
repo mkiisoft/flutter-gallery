@@ -95,7 +95,7 @@
     "path": "retroboy",
     "clone": "Retro Boy",
     "isPWA": true,
-    "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/gbc.jpg",
+    "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/gbc.png",
     "url": "https://codepen.io/mkiisoft/pen/bGVxrWK",
     "demo": "https://retro-boy-flutter.surge.sh",
     "screenshots": [
