@@ -40,7 +40,7 @@ class _SampleDetailsState extends State<SampleDetails> {
   }
 
   Future<Sample> fetchData() async {
-    final json = await HttpRequest.getString('assets/samples.json');
+    final json = await HttpRequest.getString('${Utils.rootUrl}assets/samples.json');
     final decode = await jsonDecode(json) as List;
     final list = decode.map((item) => Sample.toObject(item)).toList();
     return list.where((element) => element.path == widget.path).first;

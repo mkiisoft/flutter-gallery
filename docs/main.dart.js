@@ -44885,7 +44885,7 @@ while(true)switch(t){case 0:n=J
 m=u.l
 l=C.b6
 t=4
-return P.aw(W.Zj("assets/samples.json"),$async$em)
+return P.aw(W.Zj("https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/samples.json"),$async$em)
 case 4:t=3
 return P.aw(l.rU(0,b,null),$async$em)
 case 3:p=n.kC(m.a(b),new B.Tr(),u.px).e7(0)
