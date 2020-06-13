@@ -31,17 +31,17 @@
   },
   {
     "title": "Work Chat",
-    "description": "",
+    "description": "Slack is essentially a chat room for your whole company, designed to replace email as your primary method of communication and sharing. Its workspaces allow you to organize communications by channels for group discussions and allows for private messages to share information, files, and more all in one place.",
     "path": "slack",
     "clone": "Slack",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack.jpg",
-    "url": "",
-    "demo": "",
+    "url": "https://codepen.io/mkiisoft/pen/XWmGdxL",
+    "demo": "https://work-chat-flutter.surge.sh",
     "screenshots": [
-      "hola",
-      "como",
-      "va"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack_1.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack_2.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack_3.png"
     ]
   },
   {
