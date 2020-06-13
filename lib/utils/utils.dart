@@ -6,9 +6,28 @@ class Utils {
   static final String appName = 'Flutter Gallery';
   static final String appPath = '/gallery';
 
-  static final Color appBarColor = Color(0xFF3E4043);
+  static final String aboutName = 'About';
+  static final String aboutPath = '/about';
+
+  static final Color appBarColor = Colors.deepPurple;
 
   static final Color pwa = Color(0xFF5A0EC8);
+
+  static final MaterialColor white = MaterialColor(
+    0xFFFFFFFF,
+    <int, Color>{
+      50: Color(0xFFFFFFFF),
+      100: Color(0xFFFFFFFF),
+      200: Color(0xFFFFFFFF),
+      300: Color(0xFFFFFFFF),
+      400: Color(0xFFFFFFFF),
+      500: Color(0xFFFFFFFF),
+      600: Color(0xFFFFFFFF),
+      700: Color(0xFFFFFFFF),
+      800: Color(0xFFFFFFFF),
+      900: Color(0xFFFFFFFF),
+    },
+  );
 
   static final TextStyle title = TextStyle(fontSize: 30, color: Colors.white);
   static final TextStyle h1 = TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.w600);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttergallery/pages/about.dart';
 import 'package:fluttergallery/pages/details.dart';
 import 'package:fluttergallery/pages/home.dart';
 import 'package:fluttergallery/utils/simple_route.dart';
@@ -26,6 +27,8 @@ class _NavigatorRouteState extends State<NavigatorRoute> {
       if (widget.path == '/gallery') {
         Navigator.of(context).pushAndRemoveUntil(HomeScreen.route(false), (_) => false);
         return;
+      } else if (widget.path == '/about') {
+        Navigator.of(context).pushAndRemoveUntil(AboutScreen.route(false), (_) => false);
       } else if (widget.path.contains('/app/')) {
         Navigator.of(context).pushAndRemoveUntil(SampleDetails.route(false, widget.path.split('/')[3]), (_) => false);
       } else {

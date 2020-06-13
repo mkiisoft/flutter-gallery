@@ -53,7 +53,7 @@ class _SampleDetailsState extends State<SampleDetails> {
             child: Column(
               children: [
                 GestureDetector(
-                    child: HomeBar(),
+                    child: HomeBar(showAbout: true),
                     onTap: () {
                       Navigator.of(context).pushAndRemoveUntil(HomeScreen.route(true), (route) => false);
                     }),

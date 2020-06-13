@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Material(
       child: Column(
-        children: [HomeBar(), Expanded(child: SearchGallery()), BottomBar()],
+        children: [HomeBar(showAbout: true), Expanded(child: SearchGallery()), BottomBar()],
       ),
     );
   }
@@ -70,9 +70,15 @@ class _SearchGalleryState extends State<SearchGallery> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('All Samples', style: Utils.h1.copyWith(color: Colors.black)),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: Text('Curated list of Flutter clones.', style: Utils.h5.copyWith(color: Colors.black)),
+          ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 600),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Text(
+                  'Curated list of Flutter clones. These samples are made in love and homage to the original sites;'
+                      ' all trademarks are those of the respective owners.',
+                  style: Utils.h5.copyWith(color: Colors.black)),
+            ),
           ),
           ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 600),

@@ -121,7 +121,7 @@
   },
   {
     "title": "Tap Hero Game",
-    "description": "Tap Hero is a 100% Flutter game using sprites, audio, animations and showing the true powers of Flutter Web with Canvas Kit",
+    "description": "Tap Hero is a 100% Flutter game using sprites, audio, animations and showing the true powers of Flutter Web with Canvas Kit. Available for all modern browsers and mobile devices.",
     "path": "taphero",
     "clone": "Tap Hero Game",
     "isPWA": true,
