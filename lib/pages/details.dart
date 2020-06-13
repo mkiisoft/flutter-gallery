@@ -7,6 +7,7 @@ import 'package:fluttergallery/utils/simple_route.dart';
 import 'package:fluttergallery/utils/extensions.dart';
 import 'package:fluttergallery/utils/utils.dart';
 import 'package:fluttergallery/utils/widgets.dart';
+import 'package:photo_view/photo_view.dart';
 import 'package:universal_html/html.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -149,7 +150,8 @@ class _DetailScreenState extends State<DetailScreen> {
                   final image = widget.sample.screenshots[index];
                   return GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(FullScreenshot.route(true, image, widget.sample.path));
+                      Navigator.of(context)
+                          .push(FullScreenshot.route(true, widget.sample.screenshots, index, widget.sample.path));
                     },
                     child: Container(
                       width: 250,
@@ -186,16 +188,16 @@ class _DetailScreenState extends State<DetailScreen> {
 }
 
 class FullScreenshot extends StatelessWidget {
-  const FullScreenshot({Key key, this.image, this.path}) : super(key: key);
+  const FullScreenshot({Key key, this.screenshots, this.index}) : super(key: key);
 
-  final String image;
-  final String path;
+  final List<String> screenshots;
+  final int index;
 
-  static Route<dynamic> route(bool animated, String image, String path) {
+  static Route<dynamic> route(bool animated, List<String> screenshots, int index, String path) {
     return SimpleRoute(
         name: '/gallery/app/$path/image',
         title: Utils.appName,
-        builder: (_) => FullScreenshot(image: image),
+        builder: (_) => FullScreenshot(screenshots: screenshots, index: index),
         animated: animated,
         solid: false);
   }
@@ -205,7 +207,7 @@ class FullScreenshot extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: Container(
-        color: Colors.black87,
+        color: Colors.black.withAlpha(0xDD),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -215,11 +217,20 @@ class FullScreenshot extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                child: Icon(Icons.close, color: Colors.white),
+                child: Icon(Icons.close, color: Colors.white, size: 35),
               ),
             ),
             Expanded(
-              child: Center(child: Image.network(image, fit: BoxFit.contain)),
+              child: PageView.builder(
+                controller: PageController(initialPage: index),
+                itemBuilder: (context, index) {
+                  return PhotoView(
+                    backgroundDecoration: BoxDecoration(color: Colors.transparent),
+                    imageProvider: NetworkImage(screenshots[index]),
+                  );
+                },
+                itemCount: screenshots.length,
+              ),
             ),
             SizedBox(height: 30),
           ],
