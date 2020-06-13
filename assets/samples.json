@@ -51,12 +51,12 @@
     "clone": "WhatsApp",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp.jpg",
-    "url": "",
-    "demo": "",
+    "url": "https://codepen.io/mkiisoft/pen/BaoWVrQ",
+    "demo": "https://contacts-app-flutter.surge.sh",
     "screenshots": [
-      "hola",
-      "como",
-      "va"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp_3.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp_2.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp_1.png"
     ]
   },
   {
