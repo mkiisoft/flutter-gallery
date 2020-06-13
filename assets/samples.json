@@ -16,17 +16,17 @@
   },
   {
     "title": "Social Media App",
-    "description": "",
+    "description": "Twitter bios are where your brand gets to introduce itself, offer an elevator pitch, and set the mood—all in 160 characters or less. Some brands can do this with a single emoji.",
     "path": "twitter",
     "clone": "Twitter",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter.jpg",
-    "url": "",
-    "demo": "",
+    "url": "https://codepen.io/mkiisoft/pen/KKdgdad",
+    "demo": "https://social-media-app-flutter.surge.sh",
     "screenshots": [
-      "hola",
-      "como",
-      "va"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter_1.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter_2.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter_3.png"
     ]
   },
   {

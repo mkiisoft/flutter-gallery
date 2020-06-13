@@ -27,7 +27,7 @@ class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 50,
       color: Utils.appBarColor,
       child: Row(
         children: [

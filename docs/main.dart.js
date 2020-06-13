@@ -45081,7 +45081,7 @@ M:function(a){var t=null,s=F.cn(a,!1).a.a<600,r=$.Y1(),q=s?20:100
 return M.di(t,new T.co(new V.af(q,0,q,0),T.WZ(H.b([new X.wz(120,C.j,C.oP,t),L.d6("Gallery",t,t,t,$.a2G(),t),T.la(new T.d3(t,t,t,t)),L.a_M(L.d6("About",t,t,t,$.a2D(),t),!s)],u.t)),t),r,t,t,t,70,t,t,t,t)}}
 O.o_.prototype={
 M:function(a){var t=null,s=$.Y1()
-return M.di(t,T.WZ(H.b([T.la(new T.ed(C.ai,t,t,L.d6("\xa9 Mariano Zorrilla - 2020",t,t,t,$.uK(),t),t))],u.t)),s,t,t,t,70,t,t,t,t)}}
+return M.di(t,T.WZ(H.b([T.la(new T.ed(C.ai,t,t,L.d6("\xa9 Mariano Zorrilla - 2020",t,t,t,$.uK(),t),t))],u.t)),s,t,t,t,50,t,t,t,t)}}
 L.dK.prototype={
 gao:function(a){return this.a}}
 L.Gv.prototype={
