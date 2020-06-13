@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 
 class SimpleRoute extends PageRoute {
-  SimpleRoute({@required String name, @required this.title, @required this.builder, @required this.animated})
+  SimpleRoute(
+      {@required String name, @required this.title, @required this.builder, @required this.animated, this.solid = true})
       : super(settings: RouteSettings(name: name));
 
   final String title;
   final WidgetBuilder builder;
 
   final bool animated;
+
+  final bool solid;
+
+  @override
+  bool get opaque => solid;
 
   @override
   Color get barrierColor => null;

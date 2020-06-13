@@ -8,13 +8,13 @@ import 'package:fluttergallery/utils/extensions.dart';
 import 'package:fluttergallery/utils/utils.dart';
 import 'package:fluttergallery/utils/widgets.dart';
 import 'package:universal_html/html.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SampleDetails extends StatefulWidget {
   const SampleDetails({Key key, this.path}) : super(key: key);
   final String path;
 
   static Route<dynamic> route(bool animated, String path) {
-    print(path);
     return SimpleRoute(
         name: '/gallery/app/$path',
         title: path.capitalize(),
@@ -76,41 +76,138 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  final _controller = PageController(viewportFraction: 0.2);
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final isMobile = MediaQuery.of(context).size.width <= 700;
     return Container(
       width: size.width,
-      padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 40),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(widget.sample.title, style: Utils.h1.copyWith(color: Colors.black)),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5),
-            child: Text(widget.sample.description, style: Utils.h5.copyWith(color: Colors.black)),
-          ),
-          PageView.builder(
-            controller: _controller,
-            itemBuilder: (context, index) {
-              final image = widget.sample.screenshots[index];
-              return AspectRatio(
-                aspectRatio: 0.7,
-                child: SizedBox(
-                  height: 300,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.network(image, fit: BoxFit.cover),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 40, bottom: 20),
+              child: Text(widget.sample.title, style: Utils.h1.copyWith(color: Colors.black)),
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: 10, bottom: 30),
+                  child: OutlineButton(
+                    onPressed: () {
+                      _launchURL(widget.sample.demo);
+                    },
+                    highlightedBorderColor: Colors.grey[700],
+                    borderSide: BorderSide(color: Colors.black, width: 2),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Text('LAUNCH APP', style: TextStyle(color: Colors.black, fontSize: 12)),
+                    ),
                   ),
                 ),
-              );
-            },
-            itemCount: widget.sample.screenshots.length,
-          )
-        ],
+                Padding(
+                  padding: EdgeInsets.only(left: 20, right: 20, bottom: 30),
+                  child: OutlineButton(
+                    onPressed: () {
+                      _launchURL(widget.sample.url);
+                    },
+                    highlightedBorderColor: Colors.grey[700],
+                    borderSide: BorderSide(color: Colors.black, width: 2),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Text('< > SOURCE CODE', style: TextStyle(color: Colors.black, fontSize: 12)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 450,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 150),
+                itemBuilder: (context, index) {
+                  final image = widget.sample.screenshots[index];
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(FullScreenshot.route(true, image, widget.sample.path));
+                    },
+                    child: Container(
+                      width: 250,
+                      margin: const EdgeInsets.only(right: 25),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.network(image, fit: BoxFit.cover),
+                      ),
+                    ),
+                  );
+                },
+                itemCount: widget.sample.screenshots.length,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 30, bottom: 10),
+              child: Text('Description', style: Utils.h2.copyWith(color: Colors.black)),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, bottom: 30),
+              child: Text(widget.sample.description, style: Utils.h5.copyWith(color: Colors.black)),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    }
+  }
+}
+
+class FullScreenshot extends StatelessWidget {
+  const FullScreenshot({Key key, this.image, this.path}) : super(key: key);
+
+  final String image;
+  final String path;
+
+  static Route<dynamic> route(bool animated, String image, String path) {
+    return SimpleRoute(
+        name: '/gallery/app/$path/image',
+        title: Utils.appName,
+        builder: (_) => FullScreenshot(image: image),
+        animated: animated,
+        solid: false);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: Container(
+        color: Colors.black87,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: InkResponse(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: Icon(Icons.close, color: Colors.white),
+              ),
+            ),
+            Expanded(
+              child: Center(child: Image.network(image, fit: BoxFit.contain)),
+            ),
+            SizedBox(height: 30),
+          ],
+        ),
       ),
     );
   }

@@ -1,17 +1,17 @@
 [
   {
     "title": "Music Player",
-    "description": "",
+    "description": "Spotify is a digital music, podcast, and video streaming service that gives you access to millions of songs and other content from artists all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.",
     "path": "spotify",
     "clone": "Spotify",
     "isPWA": true,
     "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/spotify.png",
-    "url": "",
-    "demo": "",
+    "url": "https://codepen.io/mkiisoft/pen/XWXWXKo",
+    "demo": "https://music-app-flutter.surge.sh",
     "screenshots": [
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/spotify_1.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/spotify_2.png",
-      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/spotify_3.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/spotify_3.png"
     ]
   },
   {

@@ -15,7 +15,8 @@ class SampleItem extends StatefulWidget {
 class _SampleItemState extends State<SampleItem> {
   @override
   Widget build(BuildContext context) {
-    final isTablet = MediaQuery.of(context).size.width < 1000;
+    final isMobile = MediaQuery.of(context).size.width <= 700;
+    final isTablet = MediaQuery.of(context).size.width > 700 && MediaQuery.of(context).size.width < 1000;
     return Container(
       margin: EdgeInsets.all(isTablet ? 5 : 10),
       child: Card(
@@ -45,10 +46,16 @@ class _SampleItemState extends State<SampleItem> {
                             style: isTablet
                                 ? Utils.h5.copyWith(color: Colors.black, fontWeight: FontWeight.w500)
                                 : Utils.h4.copyWith(color: Colors.black, fontWeight: FontWeight.w500)),
-                        Text(widget.sample.description,
-                            style: isTablet
-                                ? Utils.h6.copyWith(color: Colors.black)
-                                : Utils.h5.copyWith(color: Colors.black)),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 5),
+                          child: Text(
+                              '${widget.sample.description.length <= (isMobile ? 110 : 70)
+                                  ? widget.sample.description
+                                  : widget.sample.description.substring(0, (isMobile ? 110 : 70)) + '...'}',
+                              style: isTablet
+                                  ? Utils.h6.copyWith(color: Colors.black)
+                                  : Utils.h5.copyWith(color: Colors.black)),
+                        ),
                       ],
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
