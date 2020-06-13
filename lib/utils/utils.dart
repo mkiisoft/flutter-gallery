@@ -8,6 +8,8 @@ class Utils {
 
   static final Color appBarColor = Color(0xFF3E4043);
 
+  static final Color pwa = Color(0xFF5A0EC8);
+
   static final TextStyle title = TextStyle(fontSize: 30, color: Colors.white);
   static final TextStyle h1 = TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.w600);
   static final TextStyle h2 = TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500);

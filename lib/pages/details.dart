@@ -88,7 +88,23 @@ class _DetailScreenState extends State<DetailScreen> {
           children: [
             Padding(
               padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 40, bottom: 20),
-              child: Text(widget.sample.title, style: Utils.h1.copyWith(color: Colors.black)),
+              child: Row(
+                children: [
+                  Text(widget.sample.title, style: Utils.h1.copyWith(color: Colors.black)),
+                  if (widget.sample.isPWA)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Utils.pwa, width: 2),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Text('PWA', style: Utils.h4.copyWith(color: Utils.pwa, fontWeight: FontWeight.bold)),
+                      ),
+                    )
+                ],
+              ),
             ),
             Row(
               children: [

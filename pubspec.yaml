@@ -3,7 +3,7 @@ description: Flutter Gallery
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+9
+version: 1.0.0+10
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -17,10 +17,6 @@ dependencies:
   universal_html: ^1.2.3
   http: ^0.12.1
   url_launcher: ^5.4.10
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
 
 flutter:
 
