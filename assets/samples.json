@@ -1,7 +1,7 @@
 [
   {
     "title": "Music Player",
-    "description": "Spotify is a digital music, podcast, and video streaming service that gives you access to millions of songs and other content from artists all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium. All trademarks are property of their respective owners",
+    "description": "Spotify is a digital music, podcast, and video streaming service that gives you access to millions of songs and other content from artists all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium. All trademarks are property of their respective owners.",
     "path": "spotify",
     "clone": "Spotify",
     "isPWA": true,
@@ -19,7 +19,7 @@
   },
   {
     "title": "Social Media App",
-    "description": "Twitter bios are where your brand gets to introduce itself, offer an elevator pitch, and set the mood—all in 160 characters or less. Some brands can do this with a single emoji. All trademarks are property of their respective owners",
+    "description": "Twitter bios are where your brand gets to introduce itself, offer an elevator pitch, and set the mood—all in 160 characters or less. Some brands can do this with a single emoji. All trademarks are property of their respective owners.",
     "path": "twitter",
     "clone": "Twitter",
     "isPWA": true,
@@ -29,12 +29,14 @@
     "screenshots": [
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter_1.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter_2.png",
-      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter_3.png"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter_3.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter_4.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/twitter_5.png"
     ]
   },
   {
     "title": "Work Chat",
-    "description": "Slack is essentially a chat room for your whole company, designed to replace email as your primary method of communication and sharing. Its workspaces allow you to organize communications by channels for group discussions and allows for private messages to share information, files, and more all in one place. All trademarks are property of their respective owners",
+    "description": "Slack is essentially a chat room for your whole company, designed to replace email as your primary method of communication and sharing. Its workspaces allow you to organize communications by channels for group discussions and allows for private messages to share information, files, and more all in one place. All trademarks are property of their respective owners.",
     "path": "slack",
     "clone": "Slack",
     "isPWA": true,
@@ -44,12 +46,14 @@
     "screenshots": [
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack_1.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack_2.png",
-      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack_3.png"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack_3.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack_4.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/slack_5.png"
     ]
   },
   {
     "title": "Contacts Chat",
-    "description": "More than 2 billion people in over 180 countries use WhatsApp to stay in touch with friends and family, anytime and anywhere. WhatsApp is free and offers simple, secure, reliable messaging and calling, available on phones all over the world. All trademarks are property of their respective owners",
+    "description": "More than 2 billion people in over 180 countries use WhatsApp to stay in touch with friends and family, anytime and anywhere. WhatsApp is free and offers simple, secure, reliable messaging and calling, available on phones all over the world. All trademarks are property of their respective owners.",
     "path": "whatsapp",
     "clone": "WhatsApp",
     "isPWA": true,
@@ -59,12 +63,15 @@
     "screenshots": [
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp_1.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp_2.png",
-      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp_3.png"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp_3.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp_4.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp_5.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/whatsapp_6.png"
     ]
   },
   {
     "title": "Ride Sharing",
-    "description": "Uber is a platform where those who drive and deliver can connect with riders, eaters, and restaurants. In cities where Uber is available, you can use the Uber app to request a ride. When a nearby driver accepts your request, the app displays an estimated time of arrival for the driver heading to your pickup location. All trademarks are property of their respective owners",
+    "description": "Uber is a platform where those who drive and deliver can connect with riders, eaters, and restaurants. In cities where Uber is available, you can use the Uber app to request a ride. When a nearby driver accepts your request, the app displays an estimated time of arrival for the driver heading to your pickup location. All trademarks are property of their respective owners.",
     "path": "uber",
     "clone": "Uber",
     "isPWA": true,
@@ -74,12 +81,13 @@
     "screenshots": [
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/uber_1.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/uber_2.png",
-      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/uber_3.png"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/uber_3.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/uber_4.png"
     ]
   },
   {
     "title": "Movies App",
-    "description": "Netflix is the world's leading streaming entertainment service with 183 million paid memberships in over 190 countries enjoying TV series, documentaries and movies. All trademarks are property of their respective owners",
+    "description": "Netflix is the world's leading streaming entertainment service with 183 million paid memberships in over 190 countries enjoying TV series, documentaries and movies. All trademarks are property of their respective owners.",
     "path": "netflix",
     "clone": "Netflix",
     "isPWA": true,
@@ -89,12 +97,15 @@
     "screenshots": [
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix_1.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix_2.png",
-      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix_3.png"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix_3.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix_4.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix_5.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/netflix_6.png",
     ]
   },
   {
     "title": "Retro Boy",
-    "description": "The Game Boy Color (commonly abbreviated as GBC) is a handheld game console, manufactured by Nintendo, which was released in Japan on October 21, 1998 and to international markets that November. It is the successor to the original Game Boy and is part of the Game Boy family. All trademarks are property of their respective owners",
+    "description": "The Game Boy Color (commonly abbreviated as GBC) is a handheld game console, manufactured by Nintendo, which was released in Japan on October 21, 1998 and to international markets that November. It is the successor to the original Game Boy and is part of the Game Boy family. All trademarks are property of their respective owners.",
     "path": "retroboy",
     "clone": "Gameboy Color",
     "isPWA": true,
@@ -104,7 +115,9 @@
     "screenshots": [
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/gbc_1.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/gbc_2.png",
-      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/gbc_3.png"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/gbc_3.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/gbc_4.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/gbc_5.png"
     ]
   },
   {
@@ -119,7 +132,8 @@
     "screenshots": [
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti_1.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti_2.png",
-      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti_3.png"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti_3.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/yeti_4.png"
     ]
   },
   {
@@ -134,7 +148,11 @@
     "screenshots": [
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_1.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_2.png",
-      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_3.png"
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_3.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_4.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_5.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_6.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_7.png"
     ]
   }
 ]
