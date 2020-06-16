@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:fluttergallery/utils/utils.dart';
+
 extension StringExtension on String {
 
   String capitalize() {

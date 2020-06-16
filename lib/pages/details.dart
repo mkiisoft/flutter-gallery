@@ -3,11 +3,13 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:fluttergallery/model/sample.dart';
 import 'package:fluttergallery/pages/home.dart';
+import 'package:fluttergallery/provider/dark_mode_provider.dart';
 import 'package:fluttergallery/utils/simple_route.dart';
 import 'package:fluttergallery/utils/extensions.dart';
 import 'package:fluttergallery/utils/utils.dart';
 import 'package:fluttergallery/utils/widgets.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:provider/provider.dart';
 import 'package:universal_html/html.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -51,6 +53,7 @@ class _SampleDetailsState extends State<SampleDetails> {
   Widget build(BuildContext context) {
     return _sample != null
         ? Material(
+            color: Theme.of(context).backgroundColor,
             child: Column(
               children: [
                 GestureDetector(
@@ -81,103 +84,118 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final isMobile = MediaQuery.of(context).size.width <= 700;
-    return Container(
-      width: size.width,
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 40, bottom: 20),
-              child: Row(
-                children: [
-                  Text(widget.sample.title, style: Utils.h1.copyWith(color: Colors.black)),
-                  if (widget.sample.isPWA)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Utils.pwa, width: 2),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Text('PWA', style: Utils.h4.copyWith(color: Utils.pwa, fontWeight: FontWeight.bold)),
-                      ),
-                    )
-                ],
-              ),
-            ),
-            Row(
+    return Consumer<DarkThemeProvider>(
+      builder: (context, value, child) {
+        return Container(
+          width: size.width,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: 10, bottom: 30),
-                  child: OutlineButton(
-                    onPressed: () {
-                      _launchURL(widget.sample.demo);
-                    },
-                    highlightedBorderColor: Colors.grey[700],
-                    borderSide: BorderSide(color: Colors.black, width: 2),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Text('LAUNCH APP', style: TextStyle(color: Colors.black, fontSize: 12)),
+                  padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 40, bottom: 20),
+                  child: Row(
+                    children: [
+                      Text(widget.sample.title, style: Utils.h1),
+                      if (widget.sample.isPWA)
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Utils.pwa(value.darkTheme), width: 2),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Text(
+                              'PWA',
+                              style: Utils.h4.copyWith(
+                                color: Utils.pwa(value.darkTheme),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        )
+                    ],
+                  ),
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: 10, bottom: 30),
+                      child: OutlineButton(
+                        onPressed: () {
+                          _launchURL(widget.sample.demo);
+                        },
+                        highlightedBorderColor: Colors.grey[700],
+                        borderSide: BorderSide(color: Colors.grey, width: 2),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Text('LAUNCH APP', style: TextStyle(fontSize: 12)),
+                        ),
+                      ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 20, right: 20, bottom: 30),
+                      child: OutlineButton(
+                        onPressed: () {
+                          _launchURL(widget.sample.url);
+                        },
+                        highlightedBorderColor: Colors.grey[700],
+                        borderSide: BorderSide(color: Colors.grey, width: 2),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Text('< > SOURCE CODE', style: TextStyle(fontSize: 12)),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 450,
+                  child: ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 150),
+                    itemBuilder: (context, index) {
+                      final image = widget.sample.screenshots[index];
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.of(context)
+                              .push(FullScreenshot.route(true, widget.sample.screenshots, index, widget.sample.path));
+                        },
+                        child: Container(
+                          width: 250,
+                          padding: const EdgeInsets.all(1),
+                          margin: const EdgeInsets.only(right: 25),
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.network(image, fit: BoxFit.cover),
+                          ),
+                        ),
+                      );
+                    },
+                    itemCount: widget.sample.screenshots.length,
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 20, right: 20, bottom: 30),
-                  child: OutlineButton(
-                    onPressed: () {
-                      _launchURL(widget.sample.url);
-                    },
-                    highlightedBorderColor: Colors.grey[700],
-                    borderSide: BorderSide(color: Colors.black, width: 2),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Text('< > SOURCE CODE', style: TextStyle(color: Colors.black, fontSize: 12)),
-                    ),
-                  ),
+                  padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 30, bottom: 10),
+                  child: Text('Description', style: Utils.h2),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, bottom: 30),
+                  child: Text(widget.sample.description, style: Utils.h5),
                 ),
               ],
             ),
-            SizedBox(
-              height: 450,
-              child: ListView.builder(
-                physics: BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 150),
-                itemBuilder: (context, index) {
-                  final image = widget.sample.screenshots[index];
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.of(context)
-                          .push(FullScreenshot.route(true, widget.sample.screenshots, index, widget.sample.path));
-                    },
-                    child: Container(
-                      width: 250,
-                      margin: const EdgeInsets.only(right: 25),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.network(image, fit: BoxFit.cover),
-                      ),
-                    ),
-                  );
-                },
-                itemCount: widget.sample.screenshots.length,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 30, bottom: 10),
-              child: Text('Description', style: Utils.h2.copyWith(color: Colors.black)),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, bottom: 30),
-              child: Text(widget.sample.description, style: Utils.h5.copyWith(color: Colors.black)),
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 

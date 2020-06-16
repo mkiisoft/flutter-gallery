@@ -11,7 +11,7 @@ class Utils {
 
   static final Color appBarColor = Colors.deepPurple;
 
-  static final Color pwa = Color(0xFF5A0EC8);
+  static Color pwa(isDark) => isDark ? Colors.white : Color(0xFF5A0EC8);
 
   static final MaterialColor white = MaterialColor(
     0xFFFFFFFF,
@@ -29,11 +29,11 @@ class Utils {
     },
   );
 
-  static final TextStyle title = TextStyle(fontSize: 30, color: Colors.white);
-  static final TextStyle h1 = TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.w600);
-  static final TextStyle h2 = TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500);
-  static final TextStyle h3 = TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.w500);
-  static final TextStyle h4 = TextStyle(fontSize: 16, color: Colors.white);
-  static final TextStyle h5 = TextStyle(fontSize: 14, color: Colors.white);
-  static final TextStyle h6 = TextStyle(fontSize: 12, color: Colors.white);
+  static final TextStyle title = TextStyle(fontSize: 30);
+  static final TextStyle h1 = TextStyle(fontSize: 22, fontWeight: FontWeight.w600);
+  static final TextStyle h2 = TextStyle(fontSize: 20, fontWeight: FontWeight.w500);
+  static final TextStyle h3 = TextStyle(fontSize: 18, fontWeight: FontWeight.w500);
+  static final TextStyle h4 = TextStyle(fontSize: 16);
+  static final TextStyle h5 = TextStyle(fontSize: 14);
+  static final TextStyle h6 = TextStyle(fontSize: 12);
 }

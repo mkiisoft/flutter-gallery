@@ -1,7 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttergallery/pages/about.dart';
 import 'package:fluttergallery/pages/home.dart';
+import 'package:fluttergallery/provider/dark_mode_provider.dart';
 import 'package:fluttergallery/utils/utils.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class HomeBar extends StatelessWidget {
   const HomeBar({Key key, this.showAbout}) : super(key: key);
@@ -11,6 +15,7 @@ class HomeBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = MediaQuery.of(context).size.width < 600;
+    final themeChange = Provider.of<DarkThemeProvider>(context);
     return Container(
       height: 70,
       color: Utils.appBarColor,
@@ -23,26 +28,50 @@ class HomeBar extends StatelessWidget {
           child: Row(
             children: [
               FlutterLogo(style: FlutterLogoStyle.horizontal, size: 120, textColor: Colors.white, colors: Utils.white),
-              Text('Gallery', style: Utils.title),
+              Text('Gallery', style: Utils.title.copyWith(color: Colors.white)),
               Expanded(child: SizedBox()),
               isMobile
-                  ? Visibility(
-                      visible: showAbout,
-                      child: InkResponse(
-                        onTap: () {
-                          Navigator.of(context).push(AboutScreen.route(true));
-                        },
-                        child: Icon(Icons.info_outline, color: Colors.white),
-                      ),
+                  ? Row(
+                      children: [
+                        Visibility(
+                          visible: showAbout,
+                          child: InkResponse(
+                            onTap: () {
+                              Navigator.of(context).push(AboutScreen.route(true));
+                            },
+                            child: Icon(Icons.info_outline, color: Colors.white),
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        InkResponse(
+                          onTap: () => themeChange.darkTheme = !themeChange.darkTheme,
+                          child: FaIcon(
+                            themeChange.darkTheme
+                                ? FontAwesomeIcons.sun
+                                : FontAwesomeIcons.moon,
+                            size: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
                     )
-                  : Visibility(
-                      visible: showAbout,
-                      child: MaterialButton(
-                        onPressed: () {
-                          Navigator.of(context).push(AboutScreen.route(true));
-                        },
-                        child: Text('About', style: Utils.h3),
-                      ),
+                  : Row(
+                      children: [
+                        Visibility(
+                          visible: showAbout,
+                          child: MaterialButton(
+                            onPressed: () {
+                              Navigator.of(context).push(AboutScreen.route(true));
+                            },
+                            child: Text('About', style: Utils.h3.copyWith(color: Colors.white)),
+                          ),
+                        ),
+                        MaterialButton(
+                          onPressed: () => themeChange.darkTheme = !themeChange.darkTheme,
+                          child: Text(themeChange.darkTheme ? 'Light Mode' : 'Dark Mode',
+                              style: Utils.h3.copyWith(color: Colors.white)),
+                        )
+                      ],
                     ),
             ],
           ),
@@ -60,7 +89,8 @@ class BottomBar extends StatelessWidget {
       color: Utils.appBarColor,
       child: Row(
         children: [
-          Expanded(child: Center(child: Text('© Mariano Zorrilla - 2020', style: Utils.h5))),
+          Expanded(
+              child: Center(child: Text('© Mariano Zorrilla - 2020', style: Utils.h5.copyWith(color: Colors.white)))),
         ],
       ),
     );

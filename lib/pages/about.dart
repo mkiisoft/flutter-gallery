@@ -13,6 +13,7 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Theme.of(context).backgroundColor,
       child: Column(
         children: [HomeBar(showAbout: false), Expanded(child: AboutMe()), BottomBar()],
       ),
@@ -33,7 +34,7 @@ class AboutMe extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 40),
-              child: Text('About Me', style: Utils.h1.copyWith(color: Colors.black)),
+              child: Text('About Me', style: Utils.h1),
             ),
             Padding(
               padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 40),
@@ -44,7 +45,7 @@ class AboutMe extends StatelessWidget {
                   'developers to use this amazing framework. \n\nIn my free time I do events, meetups, podcasts, '
                   'code challenges and help companies grow faster and better.\n\nIf you wish to know more about '
                   'me, hit the button bellow.\n\nHappy Codding!',
-                  style: Utils.h4.copyWith(color: Colors.black)),
+                  style: Utils.h4),
             ),
             Padding(
               padding: EdgeInsets.only(left: isMobile ? 20 : 150, right: isMobile ? 20 : 150, top: 40),
@@ -53,11 +54,11 @@ class AboutMe extends StatelessWidget {
                   _launchURL('https://mariano-zorrilla.web.app');
                 },
                 highlightedBorderColor: Colors.grey[700],
-                borderSide: BorderSide(color: Colors.black, width: 2),
+                borderSide: BorderSide(color: Colors.grey, width: 2),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Text('ABOUT ME', style: TextStyle(color: Colors.black, fontSize: 12)),
+                  child: Text('ABOUT ME', style: TextStyle(fontSize: 12)),
                 ),
               ),
             ),
