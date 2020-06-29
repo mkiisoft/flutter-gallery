@@ -154,5 +154,22 @@
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_6.png",
       "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/taphero_7.png"
     ]
+  },
+  {
+    "title": "Celebration",
+    "description": "Flutter reaches 100k followers on Twitter, this examples shows cool animations that can be done with implicit ones.",
+    "path": "celebration",
+    "clone": "Flutter 100k",
+    "isPWA": true,
+    "image": "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/celebration.png",
+    "url": "https://codepen.io/mkiisoft/pen/vYLXgaG",
+    "demo": "https://flutter-celebration.surge.sh",
+    "screenshots": [
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/celebration_1.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/celebration_2.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/celebration_3.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/celebration_4.png",
+      "https://raw.githubusercontent.com/mkiisoft/flutter-gallery/master/assets/images/celebration_5.png"
+    ]
   }
 ]
